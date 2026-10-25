@@ -374,7 +374,7 @@ function spawnPanda(){
   cats.push(c);return c;
 }
 
-let sheepT=rnd(30,40);
+let sheepT=rnd(12,18);
 // bounce line for the sheep: stays in the middle of the screen but off her eyes so the lasers stay visible
 function sheepLine(size,cur){
   let eyeY=H*0.45;if(face&&face.eyes.length)eyeY=face.eyes.reduce((a,e)=>a+eyeScreen(e).y,0)/face.eyes.length;
@@ -672,7 +672,7 @@ $('mute').addEventListener('click',guardClick(()=>{initAudio();setMuted(!muted);
 $('play').addEventListener('click',()=>{initAudio();startGame();});
 $('home').addEventListener('click',guardClick(()=>{state='menu';$('start').style.display='flex';$('score').style.display='none';$('home').style.display='none';cats=[];beams=[];}));
 function startGame(){
-  state='play';score=0;lastMilestone=0;$('num').textContent='0';cats=[];beams=[];texts=[];spawnT=0.3;pandaT=rnd(15,25);sheepT=rnd(30,40);
+  state='play';score=0;lastMilestone=0;$('num').textContent='0';cats=[];beams=[];texts=[];spawnT=0.3;pandaT=rnd(15,25);sheepT=rnd(12,18);
   $('start').style.display='none';$('score').style.display='block';$('home').style.display='block';
   confetti(50);chime([659,784,1047],0.08);
 }
